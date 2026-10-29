@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>インディアンポーカーをスマホで｜QRで全員つながる・自分以外のカードが見える【無料・登録不要】</title>
+<meta name="description" content="インディアンポーカーをスマホで遊べる無料ツール。全員が同じページを開いて名前のQRを読み合うと、各スマホに自分以外の人のカードだけが出ます。おでこにカードを当てなくてよく、トランプがなくても遊べます。2人から10人まで。通信なし・登録なし。">
+<meta name="theme-color" content="#ff8a3d">
+<link rel="canonical" href="https://indianpoker.kkpwebninja.com/">
+<!-- WEBNINJA_UNIFIED_FAVICON -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:title" content="インディアンポーカーをスマホで｜QRで全員つながる">
+<meta property="og:description" content="名前のQRを読み合うと、各スマホに自分以外の人のカードだけが出ます。トランプなし・おでこに当てなくてOK。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://indianpoker.kkpwebninja.com/">
+<meta property="og:site_name" content="インディアンポーカーをスマホで">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebApplication",
+      "name":"インディアンポーカーをスマホで",
+      "url":"https://indianpoker.kkpwebninja.com/",
+      "description":"全員が同じページを開いて名前のQRを読み合うと、各スマホに自分以外の人のカードだけが出るインディアンポーカーの道具。",
+      "applicationCategory":"GameApplication",
+      "operatingSystem":"Web",
+      "inLanguage":"ja",
+      "datePublished":"2026-10-30",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},
+      "author":{"@type":"Organization","name":"web忍者の砦"}
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"通信やアカウント登録は要りますか","acceptedAnswer":{"@type":"Answer","text":"要りません。名前とカードはQRで直接やり取りし、どこにも送りません。最初にページを開いたあとは、電波が弱くても遊べます。"}},
+        {"@type":"Question","name":"カメラが使えないときは","acceptedAnswer":{"@type":"Answer","text":"親の画面に出る「部屋番号」と人数を入れ、自分の席番号を選ぶと参加できます。この場合、ほかの人の名前は「1番」「2番」のように表示されます。"}},
+        {"@type":"Question","name":"何人まで遊べますか","acceptedAnswer":{"@type":"Answer","text":"2人から10人までです。"}},
+        {"@type":"Question","name":"次のラウンドはどうやって配りますか","acceptedAnswer":{"@type":"Answer","text":"全員が「次のラウンド」を押すと、同じ組み合わせのカードが配られます。画面のラウンド番号が全員そろっているか確かめてください。"}}
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2LM85GJN0L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2LM85GJN0L');
+</script>
+<!-- AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298304917726270" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
+<!-- 筆と太字はこのページで使う字だけ（python3 ~/test/kkp-kit/fonttext.py index.html --extra "（JS 内の文字）"） -->
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=RocknRoll+One&display=swap&text=%21%22%23%24%26%27%28%29%2A%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3FABCDEFGHIJKLMNOPQRSTUVWXY%5B%5C%5D%5E_abcdefghijklmnopqrstuvwxyz%7B%7C%7D%C2%A9%C2%B7%E2%80%94%E2%80%A6%E2%91%A0%E2%91%A1%E2%99%A0%E2%99%A3%E2%99%A5%E2%99%A6%E3%80%81%E3%80%82%E3%80%8C%E3%80%8D%E3%80%90%E3%80%91%E3%80%9C%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8F%E3%81%90%E3%81%91%E3%81%93%E3%81%95%E3%81%97%E3%81%98%E3%81%99%E3%81%9A%E3%81%9B%E3%81%9D%E3%81%9E%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%A3%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%B0%E3%81%B3%E3%81%B6%E3%81%B8%E3%81%B9%E3%81%BB%E3%81%BE%E3%81%BF%E3%82%80%E3%82%81%E3%82%82%E3%82%84%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%8D%E3%82%8F%E3%82%92%E3%82%93%E3%82%A2%E3%82%A3%E3%82%A4%E3%82%A6%E3%82%AB%E3%82%B2%E3%82%B3%E3%82%B6%E3%82%B7%E3%82%B8%E3%82%B9%E3%83%81%E3%83%83%E3%83%84%E3%83%86%E3%83%87%E3%83%88%E3%83%89%E3%83%90%E3%83%95%E3%83%96%E3%83%97%E3%83%9A%E3%83%9B%E3%83%9C%E3%83%9D%E3%83%9E%E3%83%A0%E3%83%A1%E3%83%A8%E3%83%A9%E3%83%AA%E3%83%AB%E3%83%AF%E3%83%B3%E3%83%BB%E3%83%BC%E4%B8%80%E4%B8%8D%E4%B8%A6%E4%B8%AD%E4%B8%B8%E4%BA%8C%E4%BA%BA%E4%BB%A5%E4%BC%9A%E4%BD%95%E4%BD%9C%E4%BD%BF%E4%BF%A1%E5%80%8B%E5%85%88%E5%85%A5%E5%85%A8%E5%85%AC%E5%86%8D%E5%87%BA%E5%88%86%E5%88%87%E5%88%9D%E5%88%A5%E5%89%8D%E5%8A%9B%E5%8A%A0%E5%8B%95%E5%8B%9D%E5%8D%94%E5%8F%82%E5%8F%8D%E5%8F%96%E5%8F%AF%E5%8F%B0%E5%8F%B7%E5%90%84%E5%90%88%E5%90%8C%E5%90%8D%E5%91%8A%E5%93%A1%E5%95%8F%E5%96%B6%E5%9F%BA%E5%A0%B4%E5%A3%B0%E5%A4%96%E5%A7%8B%E5%AD%97%E5%AE%9A%E5%AE%A3%E5%B1%8B%E5%B8%AD%E5%B9%B4%E5%BA%83%E5%BC%B1%E5%BC%B7%E5%BD%93%E5%BE%8C%E5%BF%8D%E5%BF%9C%E6%83%85%E6%85%8B%E6%88%BB%E6%89%8B%E6%8A%BC%E6%8E%A5%E6%8E%A8%E6%8F%8F%E6%95%B0%E6%96%87%E6%96%99%E6%96%B9%E6%97%A5%E6%98%A0%E6%9B%BF%E6%9C%80%E6%9C%88%E6%9C%AC%E6%9E%9A%E6%9E%A0%E6%A5%BD%E6%AC%A1%E6%B1%BA%E6%B3%A2%E6%B8%88%E7%82%B9%E7%84%A1%E7%89%B9%E7%8A%B6%E7%90%86%E7%94%B1%E7%94%BB%E7%95%AA%E7%99%BB%E7%9B%B4%E7%9B%B8%E7%A0%A6%E7%A2%BA%E7%A4%BA%E7%B5%82%E7%B5%84%E7%B6%9A%E8%80%85%E8%87%AA%E8%8B%B1%E8%A1%A8%E8%A6%81%E8%A6%8B%E8%A6%AA%E8%A8%80%E8%A8%88%E8%A8%AD%E8%A8%B1%E8%A9%B1%E8%AA%8D%E8%AA%9E%E8%AA%AD%E8%B2%A0%E8%B3%AA%E8%B5%B0%E8%B5%B7%E8%BE%BC%E8%BF%BD%E9%80%81%E9%80%9A%E9%81%8A%E9%81%8B%E9%81%B8%E9%83%A8%E9%85%8D%E9%87%8D%E9%8C%B2%E9%96%8B%E9%96%93%E9%99%8D%E9%9A%A0%E9%9B%BB%E9%9D%A2%E9%A0%86%E9%A1%8C%EF%BC%88%EF%BC%89%EF%BC%8F%EF%BC%9A%EF%BC%9F%EF%BD%9C" rel="stylesheet">
+<!-- 共通部品 D4（kkp-kit を kit/ にコピーしたもの。中は手で直さず kkp-kit 側で直して sync.sh） -->
+<link rel="stylesheet" href="/kit/kit.css?v=534b0b9">
+<script src="/kit/kit.js?v=534b0b9" defer></script>
+<style>
+:root{--orange:#ff8a3d;--orange-deep:#b35d20;--ink:#333;--ink-soft:#6b5a4c;--line:#ddd;--line-soft:#eee;--red:#c0392b}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font-size:16px;font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Hiragino Sans","Meiryo",sans-serif;line-height:1.8}
+body.k-page{background:var(--k-surface) url(/kit/img/d4-washi.webp) 0 0/320px auto}
+.wrap{max-width:720px;margin:0 auto;padding:14px 16px 0}
+h1{font-family:var(--k-brush,inherit);font-weight:400;font-size:1.5rem;line-height:1.4;margin:.3rem 0 .4rem;letter-spacing:.06em;color:var(--k-sumi,#333)}
+h2{font-family:var(--k-head,inherit);font-size:1.25rem;font-weight:800;line-height:1.45;margin:2.2rem 0 .7rem;padding:0 0 6px;border-bottom:var(--k-bw-s,2px) solid var(--k-sumi,#333)}
+.lead{margin:.4rem 0;font-size:1rem}
+.updated{margin:0 0 .6rem;font-size:.875rem;color:var(--ink-soft)}
+a{color:#1a6fc4}
+.note{font-size:.875rem;color:var(--ink-soft);line-height:1.7}
+
+/* ===== 道具 ===== */
+.app{border:var(--k-bw-s,2px) solid var(--k-sumi,#333);border-top:6px solid var(--orange);border-radius:var(--k-r,10px);background:var(--k-surface,#fff);padding:12px 14px 16px;margin-top:10px}
+.step-h{font-weight:800;font-size:1.0625rem;margin:.2rem 0 .5rem}
+label.field{display:block;font-size:.875rem;font-weight:700;color:var(--ink-soft);margin:.6rem 0 .2rem}
+input[type=text],input[type=number],select{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:#fff;border:var(--k-bw-s,2px) solid var(--k-sumi,#333);border-radius:var(--k-r,8px);padding:.5rem .7rem;min-height:44px}
+input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
+.btn{display:block;width:100%;min-height:48px;margin:.6rem 0 0;font:inherit;font-size:1rem;font-weight:800;border-radius:var(--k-r,8px);border:var(--k-bw-s,2px) solid var(--k-sumi,#333);background:#fff;color:var(--ink);cursor:pointer}
+.btn.main{background:var(--orange);border-color:var(--orange-deep);color:#fff}
+.btn:disabled{opacity:.45;cursor:default}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.row2 .btn{margin-top:.6rem}
+.linkbtn{display:block;margin-top:.4rem;background:none;border:0;padding:0;font:inherit;font-size:.875rem;color:#1a6fc4;text-decoration:underline;cursor:pointer;min-height:44px}
+.qrbox{text-align:center;margin:.6rem 0}
+.qrbox canvas,.qrbox img{width:min(78vw,300px);height:auto;image-rendering:pixelated;background:#fff;padding:10px;border:1px solid var(--line)}
+.qrname{font-weight:800;font-size:1.125rem;margin:.2rem 0 0}
+.cam{position:relative;margin:.6rem 0 0;background:#111;border-radius:var(--k-r,8px);overflow:hidden;aspect-ratio:1/1;max-width:340px;margin-left:auto;margin-right:auto}
+.cam video{width:100%;height:100%;object-fit:cover;display:block}
+.cam::after{content:"";position:absolute;inset:18%;border:3px solid rgba(255,255,255,.85);border-radius:8px}
+.cam-msg{font-size:.875rem;color:var(--ink-soft);text-align:center;margin:.3rem 0 0;min-height:1.6em}
+.members{list-style:none;margin:.5rem 0 0;padding:0;border-top:1px solid var(--line)}
+.members li{display:flex;justify-content:space-between;align-items:center;padding:.45rem .2rem;border-bottom:1px solid var(--line);font-size:1rem}
+.members small{color:var(--ink-soft)}
+.err{background:#ffe9e9;color:#9b1c1c;border-radius:8px;padding:.6rem .8rem;font-size:.9375rem;margin:.6rem 0 0}
+.roomno{font-size:.9375rem;margin:.4rem 0 0;text-align:center}
+.roomno b{font-size:1.25rem;letter-spacing:.08em}
+
+/* ゲーム画面 */
+.round{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 .4rem}
+.round b{font-size:1.25rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin:.4rem 0 0}
+.pc{border:var(--k-bw-s,2px) solid var(--k-sumi,#333);border-radius:10px;background:#fff;padding:.5rem .4rem .7rem;text-align:center}
+.pc .nm{font-size:.9375rem;font-weight:700;line-height:1.4;word-break:break-all}
+.pc .cd{font-family:var(--k-bold,inherit);font-size:2.6rem;line-height:1.2;margin-top:.2rem;font-variant-numeric:tabular-nums}
+.pc .cd.red{color:var(--red)}
+.pc.me{background:#fff4e8;border-style:dashed}
+.pc.me .cd{color:var(--ink-soft)}
+.hint{font-size:.875rem;color:var(--ink-soft);margin:.5rem 0 0;line-height:1.6}
+
+/* 本文 */
+.box ol,.box ul{padding-left:1.4rem;margin:.3rem 0}
+.box li{margin:.45rem 0}
+.faq details{border-bottom:1px solid var(--line);padding:.3rem 0}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer;padding:.45rem 0;font-size:1rem}
+.faq p{margin:.2rem 0 .7rem}
+.pr{display:inline-block;font-size:.8125rem;color:var(--ink-soft);border:1px solid #bbb;border-radius:2px;padding:0 4px;margin-right:6px;line-height:1.6}
+
+/* 広告（標準サイズ・ラベルつき・高さ予約） */
+.kkp-ad{text-align:center;margin:1.6rem auto 0;max-width:680px;min-height:288px;padding-top:6px}
+.kkp-ad-label{font-size:12px;color:#666;letter-spacing:.08em;margin:0 0 6px;line-height:1}
+.kkp-ad ins.adsbygoogle{display:block;width:300px;height:250px;margin:0 auto}
+@media(min-width:768px){.kkp-ad{min-height:318px}.kkp-ad ins.adsbygoogle{width:336px;height:280px}}
+.kkp-rel{box-sizing:border-box;margin:2rem 0 0;background:var(--k-kinari,#fffcf7);border:var(--k-bw-s,1px) solid var(--k-sumi,#f0e6d2);border-radius:var(--k-r,12px);padding:12px 16px 6px;color:var(--k-sumi,#333)}
+.kkp-rel>div:first-child{font-weight:800;margin:0 0 4px}
+.kkp-rel>a{display:block;min-height:44px;padding:10px 0;border-top:1px dashed var(--line);color:var(--k-sumi,#333);text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:4px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body class="k-page">
+<div class="wrap">
+
+<h1>インディアンポーカーをスマホで</h1>
+<p class="lead"><b>全員が同じページを開き、名前のQRを読み合うだけ。</b>各スマホに<b>自分以外の人のカード</b>が出ます。トランプも、おでこに当てる手間も要りません。</p>
+<p class="updated">2〜10人｜通信なし・登録なし｜公開 2026年10月30日</p>
+
+<div class="app" id="app">
+
+  <!-- 1. 名前と役割 -->
+  <section id="sStart">
+    <p class="step-h">名前を入れて、親か参加かを選ぶ</p>
+    <label class="field" for="myName">あなたの名前（10文字まで）</label>
+    <input type="text" id="myName" maxlength="10" autocomplete="nickname" placeholder="例 たろう">
+    <div class="row2">
+      <button type="button" class="btn main" id="goHost">親になる</button>
+      <button type="button" class="btn main" id="goJoin">参加する</button>
+    </div>
+    <p class="hint">親は1人だけ。ほかの人は「参加する」を押します。</p>
+  </section>
+
+  <!-- 2a. 親：参加者のQRを読む -->
+  <section id="sHost" hidden>
+    <p class="step-h">参加する人のQRを、順に読み取る</p>
+    <div class="cam" id="camHostWrap"><video id="camHost" playsinline muted></video></div>
+    <p class="cam-msg" id="camHostMsg"></p>
+    <ul class="members" id="hostMembers"></ul>
+    <label class="field" for="mode">カード</label>
+    <select id="mode">
+      <option value="t" selected>トランプ（A〜K・52枚から配る）</option>
+      <option value="n">1〜100の数字（同じ数字なし）</option>
+    </select>
+    <button type="button" class="btn main" id="hostDone" disabled>この人数で決定</button>
+    <button type="button" class="linkbtn" id="hostBack">最初に戻る</button>
+  </section>
+
+  <!-- 2b. 親：部屋のQRを見せる -->
+  <section id="sRoom" hidden>
+    <p class="step-h">参加する人に、このQRを読み取ってもらう</p>
+    <div class="qrbox" id="roomQr"></div>
+    <ul class="members" id="roomMembers"></ul>
+    <p class="roomno">カメラが使えない人へ：部屋番号 <b id="roomNo"></b>（<span id="roomCount"></span>人・<span id="roomMode"></span>）</p>
+    <button type="button" class="btn main" id="hostStart">全員読み取れたら、はじめる</button>
+  </section>
+
+  <!-- 2c. 参加：自分のQRを見せて、親のQRを読む -->
+  <section id="sJoin" hidden>
+    <p class="step-h">① 親に、このQRを読み取ってもらう</p>
+    <div class="qrbox"><div id="joinQr"></div><p class="qrname" id="joinName"></p></div>
+    <p class="step-h" style="margin-top:1rem">② 親の画面に出たQRを読み取る</p>
+    <button type="button" class="btn main" id="joinScan">親のQRを読み取る</button>
+    <div class="cam" id="camJoinWrap" hidden><video id="camJoin" playsinline muted></video></div>
+    <p class="cam-msg" id="camJoinMsg"></p>
+    <button type="button" class="linkbtn" id="manualOpen">カメラが使えないとき</button>
+    <div id="manual" hidden>
+      <div class="row2">
+        <div><label class="field" for="mRoom">部屋番号</label><input type="number" id="mRoom" inputmode="numeric" placeholder="4けた"></div>
+        <div><label class="field" for="mCount">人数</label><input type="number" id="mCount" inputmode="numeric" min="2" max="10" placeholder="例 4"></div>
+      </div>
+      <div class="row2">
+        <div><label class="field" for="mMode">カード</label><select id="mMode"><option value="t">トランプ</option><option value="n">1〜100</option></select></div>
+        <div><label class="field" for="mSeat">自分の席番号</label><input type="number" id="mSeat" inputmode="numeric" min="1" max="10" placeholder="親の画面の番号"></div>
+      </div>
+      <button type="button" class="btn main" id="manualGo">この番号で参加</button>
+    </div>
+    <button type="button" class="linkbtn" id="joinBack">最初に戻る</button>
+  </section>
+
+  <!-- 3. ゲーム -->
+  <section id="sGame" hidden>
+    <div class="round"><span>ラウンド <b id="roundNo">1</b></span><small class="note">全員の番号がそろっているか確認</small></div>
+    <div class="cards" id="cards"></div>
+    <p class="hint">あなたのカードはこの画面に出ません。ほかの人の画面を見ないでください。</p>
+    <div class="row2">
+      <button type="button" class="btn" id="reveal">自分のカードを見る</button>
+      <button type="button" class="btn main" id="nextRound">次のラウンド</button>
+    </div>
+    <button type="button" class="linkbtn" id="quit">メンバーを決め直す</button>
+  </section>
+
+  <div class="err" id="err" hidden></div>
+</div>
+
+<div class="kkp-ad">
+  <div class="kkp-ad-label">広告</div>
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-1298304917726270"
+       data-ad-slot="2937937957"
+       data-ad-format="rectangle"
+       data-full-width-responsive="false"></ins>
+</div>
+
+<h2>遊び方：つなぐまで1分</h2>
+<div class="box">
+  <ol>
+    <li>全員がこのページを開いて、名前を入れる。</li>
+    <li>親を1人決める。ほかの人は「参加する」を押し、出たQRを親に読み取ってもらう。</li>
+    <li>親が「この人数で決定」を押すと、部屋のQRが出る。全員がそれを読み取る。</li>
+    <li>各スマホに、自分以外の人のカードが出る。</li>
+  </ol>
+  <p class="note">次からは「次のラウンド」を押すだけ。読み取り直しは要りません。</p>
+</div>
+
+<h2>インディアンポーカーの基本ルール</h2>
+<div class="box">
+  <p>自分のカードだけが見えない状態で、勝負するか降りるかを決める遊びです。</p>
+  <ol>
+    <li>全員に1枚ずつカードを配る（このツールが配ります）。</li>
+    <li>ほかの人のカードと、みんなの反応を見て、自分のカードの強さを推理する。</li>
+    <li>順番に「勝負」か「降りる」を宣言する。</li>
+    <li>勝負した人のうち、一番強いカードの人が勝ち。</li>
+  </ol>
+  <p class="note">強さは始める前に決めておきます。Aを一番強くするか一番弱くするか、同じ数字のときはどうするかなど。点数やチップの数え方も自由です。</p>
+</div>
+
+<h2>2人でも遊べる？</h2>
+<div class="box">
+  <p>遊べます。相手のカードだけが見えるので、「勝負」か「降りる」かの読み合いになります。点数を決めて、何ラウンドかの合計で勝ち負けを決めると続けやすくなります。</p>
+</div>
+
+<h2>よくある質問</h2>
+<div class="faq">
+  <details><summary>通信やアカウント登録は要りますか</summary>
+    <p>要りません。名前とカードはQRで直接やり取りし、どこにも送りません。最初にページを開いたあとは、電波が弱くても遊べます。</p></details>
+  <details><summary>カメラが使えないときは</summary>
+    <p>親の画面に出る「部屋番号」と人数を入れ、自分の席番号を選ぶと参加できます。この場合、ほかの人の名前は「1番」「2番」のように表示されます。</p></details>
+  <details><summary>何人まで遊べますか</summary>
+    <p>2人から10人までです。</p></details>
+  <details><summary>次のラウンドはどうやって配りますか</summary>
+    <p>全員が「次のラウンド」を押すと、同じ組み合わせのカードが配られます。画面のラウンド番号が全員そろっているか確かめてください。</p></details>
+</div>
+
+<h2>もっと遊ぶなら</h2>
+<div class="box">
+  <p>自分のカードが見えない遊びをもっと楽しむなら、ボードゲーム「コヨーテ」があります。全員のカードの合計を推理する遊びで、特別なカードも入っています。</p>
+  <p><span class="pr">PR</span><a href="https://www.amazon.co.jp/s?k=%E3%82%B3%E3%83%A8%E3%83%BC%E3%83%86+%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B2%E3%83%BC%E3%83%A0&tag=kkp15-22" target="_blank" rel="nofollow sponsored noopener" id="afCoyote">コヨーテ（ボードゲーム）をAmazonで見る</a></p>
+  <p class="note">数字で順番を当てる協力ゲームなら、<a href="https://ito.kkpwebninja.com/">ito のお題と数字配り</a>もどうぞ。</p>
+</div>
+
+<!-- WEBNINJA_RELATED_APPS -->
+<div class="kkp-rel">
+  <div>あわせて使えるアプリ</div>
+  <a href="https://ito.kkpwebninja.com/">ito（イト）のお題と数字配り — スマホ1台で遊べる</a>
+  <a href="https://wordwolf.kkpwebninja.com/">ワードウルフ — 3〜10人の会話ゲーム</a>
+  <a href="https://haa.kkpwebninja.com/">声と表情で当てるゲーム — 3〜8人</a>
+</div>
+
+<p class="note" style="text-align:center;margin:1.4rem 0 0">トランプ遊び「インディアンポーカー」を遊ぶための、個人運営の無料ツールです。</p>
+
+<!-- WEBNINJA_UNIFIED_FOOTER -->
+<footer style="text-align:center;padding:2rem 1rem 2.5rem;font-size:.875rem;color:#607490;line-height:2;border-top:1px solid #f0e6d2;margin-top:1.6rem;background:#fffcf7;">
+  <div style="font-weight:800;color:#8b6b3d;font-size:.875rem;margin-bottom:0.4rem;">web忍者の砦</div>
+  <div>
+    <a href="https://kkpwebninja.com/" target="_blank" rel="noopener" style="color:#8b6b3d;text-decoration:none;margin:0 0.5rem;">本丸トップ</a>·
+    <a href="https://privacypolicy.kkpwebninja.com/" target="_blank" rel="noopener" style="color:#8b6b3d;text-decoration:none;margin:0 0.5rem;">プライバシーポリシー</a>·
+    <a href="https://kkpwebninja.com/otoiawase" target="_blank" rel="noopener" style="color:#8b6b3d;text-decoration:none;margin:0 0.5rem;">お問い合わせ</a>
+  </div>
+  <div style="margin-top:0.5rem;color:#846e40;">© 2025-2026 web忍者の砦</div>
+</footer>
+</div>
+
+<script src="/lib/qrcode.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var $ = function(id){ return document.getElementById(id); };
+  var KEY = 'indianpoker-v1';
+  var MAX = 10;
+  // \uFE0E を付けて、iPhone で絵文字の形にならないようにする
+  var SUITS = ['♠\uFE0E','♥\uFE0E','♦\uFE0E','♣\uFE0E'];
+  var RANKS = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+
+  function track(name, p){ if (typeof gtag === 'function') gtag('event', name, p || {}); }
+  function rid(){ return Math.random().toString(36).slice(2, 8); }
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} }
+  function showErr(msg){ var e = $('err'); e.textContent = msg || ''; e.hidden = !msg; }
+
+  // 状態: name・id（自分）／ members [[id,name]...]・seat・room・mode・round（ゲーム中）
+  var st = load();
+  if (!st.id) st.id = rid();
+  if (st.name) $('myName').value = st.name;
+
+  // ===== 画面の切り替え =====
+  var SECTIONS = ['sStart','sHost','sRoom','sJoin','sGame'];
+  function show(id){
+    SECTIONS.forEach(function(s){ $(s).hidden = (s !== id); });
+    showErr('');
+    stopCam();
+    st.screen = id; save();
+  }
+
+  // ===== QR を描く（qrcode-generator。日本語の名前は encodeURIComponent して英数字だけにする） =====
+  function drawQr(el, text){
+    var qr = qrcode(0, 'L');
+    qr.addData(text);
+    qr.make();
+    el.innerHTML = qr.createImgTag(6, 0);
+  }
+
+  // ===== カメラで QR を読む（BarcodeDetector があれば使い、無ければ jsQR を後から読み込む） =====
+  var cam = null;
+  function loadJsQR(){
+    return new Promise(function(res, rej){
+      if (window.jsQR) return res();
+      var s = document.createElement('script');
+      s.src = '/lib/jsQR.min.js'; s.onload = function(){ res(); }; s.onerror = rej;
+      document.head.appendChild(s);
+    });
+  }
+  function startCam(video, msgEl, onText){
+    stopCam();
+    msgEl.textContent = 'カメラを起動しています…';
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      msgEl.textContent = 'このブラウザではカメラが使えません。';
+      return;
+    }
+    var detector = ('BarcodeDetector' in window) ? new window.BarcodeDetector({ formats: ['qr_code'] }) : null;
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d', { willReadFrequently: true });
+    var me = { stream: null, stopped: false, timer: 0 };
+    cam = me;
+    Promise.all([
+      navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: false }),
+      detector ? Promise.resolve() : loadJsQR()
+    ]).then(function(r){
+      if (me.stopped) { r[0].getTracks().forEach(function(t){ t.stop(); }); return; }
+      me.stream = r[0];
+      video.srcObject = me.stream;
+      video.play();
+      msgEl.textContent = '枠の中にQRを映してください';
+      var busy = false;
+      me.timer = setInterval(function(){
+        if (busy || me.stopped || video.readyState < 2) return;
+        busy = true;
+        var p;
+        if (detector) {
+          p = detector.detect(video).then(function(codes){ return codes.length ? codes[0].rawValue : null; });
+        } else {
+          var w = video.videoWidth, h = video.videoHeight, sz = Math.min(w, h);
+          canvas.width = canvas.height = Math.min(sz, 640);
+          ctx.drawImage(video, (w - sz) / 2, (h - sz) / 2, sz, sz, 0, 0, canvas.width, canvas.height);
+          var img = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          var c = window.jsQR(img.data, img.width, img.height, { inversionAttempts: 'dontInvert' });
+          p = Promise.resolve(c ? c.data : null);
+        }
+        p.then(function(text){ busy = false; if (text && !me.stopped) onText(text, msgEl); })
+         .catch(function(){ busy = false; });
+      }, 250);
+    }).catch(function(){
+      msgEl.textContent = 'カメラを使えませんでした。ブラウザの設定でカメラを許可してください。';
+    });
+  }
+  function stopCam(){
+    if (!cam) return;
+    cam.stopped = true;
+    clearInterval(cam.timer);
+    if (cam.stream) cam.stream.getTracks().forEach(function(t){ t.stop(); });
+    cam = null;
+  }
+
+  // ===== 名前 =====
+  function takeName(){
+    var n = $('myName').value.trim().slice(0, 10);
+    if (!n) { showErr('名前を入れてください。'); $('myName').focus(); return null; }
+    st.name = n; save();
+    return n;
+  }
+
+  // ===== 親 =====
+  function renderHostMembers(){
+    $('hostMembers').innerHTML = st.members.map(function(m, i){
+      return '<li><span>' + (i + 1) + '. ' + esc(m[1]) + '</span><small>' + (i === 0 ? '親（あなた）' : '読み取り済み') + '</small></li>';
+    }).join('');
+    $('hostDone').disabled = st.members.length < 2;
+    $('hostDone').textContent = st.members.length < 2 ? '参加する人のQRを読み取ってください' : st.members.length + '人で決定';
+  }
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]; }); }
+
+  $('goHost').addEventListener('click', function(){
+    var n = takeName(); if (!n) return;
+    st.members = [[st.id, n]];
+    show('sHost');
+    renderHostMembers();
+    track('ip_host');
+    startCam($('camHost'), $('camHostMsg'), function(text, msg){
+      var m = /^IP1J\|([a-z0-9]{6})\|(.+)$/.exec(text);
+      if (!m) { msg.textContent = 'このツールのQRではありません'; return; }
+      if (st.members.some(function(x){ return x[0] === m[1]; })) { msg.textContent = 'この人は読み取り済みです'; return; }
+      if (st.members.length >= MAX) { msg.textContent = MAX + '人までです'; return; }
+      var name; try { name = decodeURIComponent(m[2]); } catch (e) { name = '?'; }
+      st.members.push([m[1], name.slice(0, 10)]); save();
+      msg.textContent = name + ' さんを追加しました';
+      if (navigator.vibrate) { try { navigator.vibrate(30); } catch (e) {} }
+      renderHostMembers();
+    });
+  });
+  $('hostBack').addEventListener('click', function(){ show('sStart'); });
+
+  $('hostDone').addEventListener('click', function(){
+    st.mode = $('mode').value;
+    st.room = 1000 + Math.floor(Math.random() * 9000);
+    st.seat = 0; st.round = 1; save();
+    var payload = 'IP1R|' + st.room + '|' + st.mode + '|' + st.members.map(function(m){ return m[0] + ':' + encodeURIComponent(m[1]); }).join(',');
+    drawQr($('roomQr'), payload);
+    $('roomNo').textContent = st.room;
+    $('roomCount').textContent = st.members.length;
+    $('roomMode').textContent = st.mode === 't' ? 'トランプ' : '1〜100';
+    $('roomMembers').innerHTML = st.members.map(function(m, i){ return '<li><span>' + (i + 1) + '番 ' + esc(m[1]) + '</span><small>' + (i === 0 ? '親' : '') + '</small></li>'; }).join('');
+    show('sRoom');
+    st.roomPayload = payload; save();
+  });
+  $('hostStart').addEventListener('click', function(){ startGame(); });
+
+  // ===== 参加 =====
+  function openJoin(){
+    drawQr($('joinQr'), 'IP1J|' + st.id + '|' + encodeURIComponent(st.name));
+    $('joinName').textContent = st.name;
+    show('sJoin');
+    $('camJoinWrap').hidden = true; $('camJoinMsg').textContent = '';
+  }
+  $('goJoin').addEventListener('click', function(){
+    if (!takeName()) return;
+    openJoin();
+    track('ip_join');
+  });
+  $('joinBack').addEventListener('click', function(){ show('sStart'); });
+  $('joinScan').addEventListener('click', function(){
+    $('camJoinWrap').hidden = false;
+    startCam($('camJoin'), $('camJoinMsg'), function(text, msg){
+      var m = /^IP1R\|(\d{4})\|([tn])\|(.+)$/.exec(text);
+      if (!m) { msg.textContent = '親の画面の「部屋のQR」を読み取ってください'; return; }
+      var members = m[3].split(',').map(function(x){
+        var i = x.indexOf(':'); var nm;
+        try { nm = decodeURIComponent(x.slice(i + 1)); } catch (e) { nm = '?'; }
+        return [x.slice(0, i), nm];
+      });
+      var seat = -1;
+      members.forEach(function(x, i){ if (x[0] === st.id) seat = i; });
+      if (seat < 0) { msg.textContent = 'まだ親に読み取ってもらっていません。①のQRを先に親へ'; return; }
+      st.room = +m[1]; st.mode = m[2]; st.members = members; st.seat = seat; st.round = 1; save();
+      startGame();
+    });
+  });
+  $('manualOpen').addEventListener('click', function(){ $('manual').hidden = !$('manual').hidden; });
+  $('manualGo').addEventListener('click', function(){
+    var room = +$('mRoom').value, n = +$('mCount').value, seat = +$('mSeat').value;
+    if (!(room >= 1000 && room <= 9999)) return showErr('部屋番号は4けたです。');
+    if (!(n >= 2 && n <= MAX)) return showErr('人数は2〜' + MAX + 'です。');
+    if (!(seat >= 1 && seat <= n)) return showErr('席番号は1〜' + n + 'です。');
+    st.room = room; st.mode = $('mMode').value; st.seat = seat - 1; st.round = 1;
+    st.members = [];
+    for (var i = 0; i < n; i++) st.members.push(['', i === seat - 1 ? st.name : (i + 1) + '番']);
+    save();
+    startGame();
+  });
+
+  // ===== 配る（部屋番号とラウンドから全員同じ並びを作る） =====
+  function mulberry32(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function deal(room, round, mode, n){
+    var rnd = mulberry32(room * 1000 + round * 7919 + (mode === 't' ? 1 : 2));
+    var deck = [];
+    if (mode === 't') { for (var s = 0; s < 4; s++) for (var r = 0; r < 13; r++) deck.push({ s: s, r: r }); }
+    else { for (var k = 1; k <= 100; k++) deck.push({ v: k }); }
+    for (var i = deck.length - 1; i > 0; i--) { var j = Math.floor(rnd() * (i + 1)); var t = deck[i]; deck[i] = deck[j]; deck[j] = t; }
+    return deck.slice(0, n);
+  }
+  function cardHtml(c){
+    if (c.v != null) return '<div class="cd">' + c.v + '</div>';
+    return '<div class="cd' + (c.s === 1 || c.s === 2 ? ' red' : '') + '">' + SUITS[c.s] + RANKS[c.r] + '</div>';
+  }
+
+  var revealed = false;
+  function startGame(){
+    show('sGame');
+    revealed = false;
+    renderGame();
+    track('ip_start', { n: st.members.length, mode: st.mode });
+  }
+  function renderGame(){
+    var cards = deal(st.room, st.round, st.mode, st.members.length);
+    $('roundNo').textContent = st.round;
+    $('cards').innerHTML = st.members.map(function(m, i){
+      var mine = i === st.seat;
+      return '<div class="pc' + (mine ? ' me' : '') + '"><div class="nm">' + esc(m[1]) + (mine ? '（あなた）' : '') + '</div>' +
+        (mine && !revealed ? '<div class="cd">？</div>' : cardHtml(cards[i])) + '</div>';
+    }).join('');
+    $('reveal').textContent = revealed ? '自分のカードを隠す' : '自分のカードを見る';
+  }
+  $('reveal').addEventListener('click', function(){
+    if (!revealed && !confirm('自分のカードを表示します。勝負が終わってから押してください。')) return;
+    revealed = !revealed; renderGame();
+    if (revealed) track('ip_reveal', { round: st.round });
+  });
+  $('nextRound').addEventListener('click', function(){
+    st.round++; save(); revealed = false; renderGame();
+    track('ip_round', { round: st.round });
+  });
+  $('quit').addEventListener('click', function(){
+    if (!confirm('メンバーを決め直します。いまのゲームは終わります。')) return;
+    st.members = null; st.room = null; save(); show('sStart');
+  });
+
+  $('afCoyote').addEventListener('click', function(){ track('af_click', { program: 'amazon_coyote', page: 'indianpoker' }); });
+
+  // ===== 再読み込みしても続きから =====
+  if (st.screen === 'sGame' && st.members && st.room) { show('sGame'); renderGame(); }
+  else if (st.screen === 'sJoin' && st.name) openJoin();
+  else show('sStart');
+})();
+</script>
+
+<script>
+// 広告枠ぶんだけ読み込む。二重に走らせない
+(function(){
+  var slots = document.querySelectorAll('ins.adsbygoogle');
+  for (var i = 0; i < slots.length; i++){
+    try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+  }
+})();
+</script>
+</body>
+</html>
