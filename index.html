@@ -37,7 +37,8 @@
       "@type":"FAQPage",
       "mainEntity":[
         {"@type":"Question","name":"通信やアカウント登録は要りますか","acceptedAnswer":{"@type":"Answer","text":"要りません。名前とカードはQRで直接やり取りし、どこにも送りません。最初にページを開いたあとは、電波が弱くても遊べます。"}},
-        {"@type":"Question","name":"カメラが使えないときは","acceptedAnswer":{"@type":"Answer","text":"集める人の画面に出る「部屋番号」と人数を入れ、自分の席番号を選ぶと参加できます。この場合、ほかの人の名前は「1番」「2番」のように表示されます。"}},
+        {"@type":"Question","name":"カメラが使えないときは","acceptedAnswer":{"@type":"Answer","text":"QRの読み取りにはカメラが要ります。ブラウザの設定で、このページにカメラを許可してください。番号の手入力で入る方法は、別の席になりすませてしまうので用意していません。"}},
+        {"@type":"Question","name":"ずるはできませんか","acceptedAnswer":{"@type":"Answer","text":"名簿に入っていないスマホは参加できません。勝負の前に「自分のカードを見る」を押すと、そのラウンドの間ずっと「カードを見ました」と画面に出ます。"}},
         {"@type":"Question","name":"何人まで遊べますか","acceptedAnswer":{"@type":"Answer","text":"2人から10人までです。"}},
         {"@type":"Question","name":"次のラウンドはどうやって配りますか","acceptedAnswer":{"@type":"Answer","text":"全員が「次のラウンド」を押すと、同じ組み合わせのカードが配られます。画面のラウンド番号が全員そろっているか確かめてください。"}}
       ]
@@ -59,7 +60,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
 <!-- 筆と太字はこのページで使う字だけ（python3 ~/test/kkp-kit/fonttext.py index.html --extra "（JS 内の文字）"） -->
-<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=RocknRoll+One&display=swap&text=%21%22%23%24%26%27%28%29%2A%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3FABCDEFGHIJKLMNOPQRSTUVWXY%5B%5C%5D%5E_abcdefghijklmnopqrstuvwxyz%7B%7C%7D%C2%A9%C2%B7%E2%80%94%E2%80%A6%E2%91%A0%E2%91%A1%E2%97%AF%E2%99%A0%E2%99%A3%E2%99%A5%E2%99%A6%E3%80%81%E3%80%82%E3%80%8C%E3%80%8D%E3%80%90%E3%80%91%E3%80%9C%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8F%E3%81%90%E3%81%91%E3%81%93%E3%81%95%E3%81%97%E3%81%98%E3%81%99%E3%81%9A%E3%81%9B%E3%81%9D%E3%81%9E%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%A3%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%B0%E3%81%B3%E3%81%B6%E3%81%B8%E3%81%B9%E3%81%BB%E3%81%BE%E3%81%BF%E3%82%80%E3%82%81%E3%82%82%E3%82%84%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%8D%E3%82%8F%E3%82%92%E3%82%93%E3%82%A2%E3%82%A3%E3%82%A4%E3%82%A6%E3%82%AB%E3%82%B2%E3%82%B3%E3%82%B6%E3%82%B7%E3%82%B8%E3%82%B9%E3%83%81%E3%83%83%E3%83%84%E3%83%86%E3%83%87%E3%83%88%E3%83%89%E3%83%90%E3%83%95%E3%83%96%E3%83%97%E3%83%9A%E3%83%9B%E3%83%9C%E3%83%9D%E3%83%9E%E3%83%A0%E3%83%A1%E3%83%A8%E3%83%A9%E3%83%AA%E3%83%AB%E3%83%AF%E3%83%B3%E3%83%BB%E3%83%BC%E4%B8%80%E4%B8%8D%E4%B8%A6%E4%B8%AD%E4%B8%B8%E4%BA%8C%E4%BA%BA%E4%BB%98%E4%BB%A5%E4%BC%9A%E4%BD%95%E4%BD%9C%E4%BD%BF%E4%BF%A1%E5%80%8B%E5%85%88%E5%85%A5%E5%85%A8%E5%85%AC%E5%86%8D%E5%87%BA%E5%88%86%E5%88%87%E5%88%9D%E5%88%A5%E5%89%8D%E5%8A%9B%E5%8A%A0%E5%8B%95%E5%8B%9D%E5%8D%94%E5%8F%82%E5%8F%8D%E5%8F%96%E5%8F%AF%E5%8F%B0%E5%8F%B7%E5%90%84%E5%90%88%E5%90%8C%E5%90%8D%E5%91%8A%E5%93%A1%E5%95%8F%E5%96%B6%E5%9F%BA%E5%A0%B4%E5%A3%B0%E5%A4%96%E5%A7%8B%E5%AD%97%E5%AE%9A%E5%AE%A3%E5%B1%8B%E5%B8%AD%E5%B9%B4%E5%BA%83%E5%BC%B1%E5%BC%B7%E5%BD%93%E5%BD%A2%E5%BE%8C%E5%BF%8D%E5%BF%9C%E6%83%85%E6%85%8B%E6%88%BB%E6%89%8B%E6%8A%BC%E6%8E%A5%E6%8E%A8%E6%8F%8F%E6%95%B0%E6%96%87%E6%96%99%E6%96%B9%E6%97%A5%E6%98%A0%E6%9B%BF%E6%9C%80%E6%9C%88%E6%9C%AC%E6%9E%9A%E6%9E%A0%E6%A5%BD%E6%AC%A1%E6%B1%BA%E6%B3%A2%E6%B8%88%E7%82%B9%E7%84%A1%E7%89%B9%E7%8A%B6%E7%90%86%E7%94%B1%E7%94%BB%E7%95%AA%E7%99%BB%E7%9B%B4%E7%9B%B8%E7%A0%A6%E7%A2%BA%E7%A4%BA%E7%B5%82%E7%B5%84%E7%B5%B5%E7%B6%9A%E8%80%85%E8%87%AA%E8%8B%B1%E8%A1%A8%E8%A6%81%E8%A6%8B%E8%A8%80%E8%A8%88%E8%A8%AD%E8%A8%B1%E8%A9%B1%E8%AA%8D%E8%AA%9E%E8%AA%AD%E8%B2%A0%E8%B3%AA%E8%B5%B0%E8%B5%B7%E8%BE%BC%E8%BF%BD%E9%80%81%E9%80%9A%E9%81%8A%E9%81%8B%E9%81%B8%E9%83%A8%E9%85%8D%E9%87%8D%E9%8C%B2%E9%96%8B%E9%96%93%E9%99%8D%E9%9A%A0%E9%9B%86%E9%9B%BB%E9%9D%A2%E9%A0%86%E9%A1%8C%EF%BC%88%EF%BC%89%EF%BC%8F%EF%BC%9A%EF%BC%9F%EF%BD%9C" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=RocknRoll+One&display=swap&text=%21%22%23%24%26%27%28%29%2A%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3FABCDEFGHIJKLMNOPQRSTUVWXY%5B%5C%5D%5E_abcdefghijklmnopqrstuvwxyz%7B%7C%7D%C2%A9%C2%B7%E2%80%94%E2%80%A6%E2%91%A0%E2%91%A1%E2%97%AF%E2%99%A0%E2%99%A3%E2%99%A5%E2%99%A6%E3%80%81%E3%80%82%E3%80%8C%E3%80%8D%E3%80%90%E3%80%91%E3%80%9C%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8F%E3%81%90%E3%81%91%E3%81%93%E3%81%95%E3%81%97%E3%81%98%E3%81%99%E3%81%9A%E3%81%9B%E3%81%9D%E3%81%9E%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%A3%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%B0%E3%81%B3%E3%81%B6%E3%81%B8%E3%81%B9%E3%81%BB%E3%81%BE%E3%81%BF%E3%82%80%E3%82%81%E3%82%82%E3%82%84%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%8D%E3%82%8F%E3%82%92%E3%82%93%E3%82%A2%E3%82%A3%E3%82%A4%E3%82%A6%E3%82%AB%E3%82%B2%E3%82%B3%E3%82%B6%E3%82%B7%E3%82%B8%E3%82%B9%E3%83%81%E3%83%83%E3%83%84%E3%83%86%E3%83%87%E3%83%88%E3%83%89%E3%83%90%E3%83%95%E3%83%96%E3%83%97%E3%83%9A%E3%83%9B%E3%83%9C%E3%83%9D%E3%83%9E%E3%83%A0%E3%83%A1%E3%83%A8%E3%83%A9%E3%83%AA%E3%83%AB%E3%83%AF%E3%83%B3%E3%83%BB%E3%83%BC%E4%B8%80%E4%B8%8D%E4%B8%A6%E4%B8%AD%E4%B8%B8%E4%BA%8C%E4%BA%BA%E4%BB%98%E4%BB%A5%E4%BC%9A%E4%BD%95%E4%BD%9C%E4%BD%BF%E4%BF%A1%E5%80%8B%E5%85%88%E5%85%A5%E5%85%A8%E5%85%AC%E5%86%8D%E5%87%BA%E5%88%86%E5%88%87%E5%88%9D%E5%88%A5%E5%89%8D%E5%8A%9B%E5%8A%A0%E5%8B%95%E5%8B%9D%E5%8D%94%E5%8F%82%E5%8F%8D%E5%8F%96%E5%8F%AF%E5%8F%B0%E5%8F%B7%E5%90%84%E5%90%88%E5%90%8C%E5%90%8D%E5%91%8A%E5%93%A1%E5%95%8F%E5%96%B6%E5%9F%BA%E5%A3%B0%E5%A4%96%E5%A7%8B%E5%AD%97%E5%AE%9A%E5%AE%A3%E5%B1%8B%E5%B8%AD%E5%B9%B4%E5%BA%83%E5%BC%B1%E5%BC%B7%E5%BD%93%E5%BD%A2%E5%BE%8C%E5%BF%8D%E5%BF%9C%E6%83%85%E6%84%8F%E6%85%8B%E6%88%BB%E6%89%8B%E6%8A%BC%E6%8E%A5%E6%8E%A8%E6%8F%8F%E6%95%B0%E6%96%87%E6%96%99%E6%96%B9%E6%97%A5%E6%98%A0%E6%9B%BF%E6%9C%80%E6%9C%88%E6%9C%AC%E6%9E%9A%E6%9E%A0%E6%A5%BD%E6%AC%A1%E6%B1%BA%E6%B3%95%E6%B3%A2%E6%B8%88%E7%82%B9%E7%84%A1%E7%89%B9%E7%8A%B6%E7%90%86%E7%94%A8%E7%94%B1%E7%94%BB%E7%95%AA%E7%99%BB%E7%9B%B4%E7%9B%B8%E7%A0%A6%E7%A2%BA%E7%A4%BA%E7%B0%BF%E7%B5%82%E7%B5%84%E7%B5%B5%E7%B6%9A%E8%80%85%E8%87%AA%E8%8B%B1%E8%A1%A8%E8%A6%81%E8%A6%8B%E8%A8%80%E8%A8%88%E8%A8%AD%E8%A8%B1%E8%A9%B1%E8%AA%8D%E8%AA%9E%E8%AA%AD%E8%B2%A0%E8%B3%AA%E8%B5%B0%E8%B5%B7%E8%BE%BC%E8%BF%BD%E9%80%81%E9%80%9A%E9%81%8A%E9%81%8B%E9%81%B8%E9%83%A8%E9%85%8D%E9%87%8D%E9%8C%B2%E9%96%8B%E9%96%93%E9%99%8D%E9%9A%A0%E9%9B%86%E9%9B%BB%E9%9D%A2%E9%A0%86%E9%A1%8C%EF%BC%88%EF%BC%89%EF%BC%8F%EF%BC%9A%EF%BC%9F%EF%BD%9C" rel="stylesheet">
 <!-- 共通部品 D4（kkp-kit を kit/ にコピーしたもの。中は手で直さず kkp-kit 側で直して sync.sh） -->
 <link rel="stylesheet" href="/kit/kit.css?v=534b0b9">
 <script src="/kit/kit.js?v=534b0b9" defer></script>
@@ -114,6 +115,7 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
 .pc .cd.red{color:var(--red)}
 .pc.me{background:#fff4e8;border-style:dashed}
 .pc.me .cd{color:var(--ink-soft)}
+.peek{margin:.4rem 0 0;padding:.45rem .7rem;background:#fde3e3;color:#9b1c1c;font-weight:800;border-radius:8px;font-size:.9375rem}
 .hint{font-size:.875rem;color:var(--ink-soft);margin:.5rem 0 0;line-height:1.6}
 
 /* 本文 */
@@ -177,7 +179,7 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
     <p class="step-h">参加する人に、このQRを読み取ってもらう</p>
     <div class="qrbox" id="roomQr"></div>
     <ul class="members" id="roomMembers"></ul>
-    <p class="roomno">カメラが使えない人へ：部屋番号 <b id="roomNo"></b>（<span id="roomCount"></span>人・<span id="roomMode"></span>）</p>
+    <p class="roomno"><span id="roomCount"></span>人・<span id="roomMode"></span></p>
     <button type="button" class="btn main" id="hostStart">全員読み取れたら、はじめる</button>
   </section>
 
@@ -189,24 +191,13 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
     <button type="button" class="btn main" id="joinScan">集める人のQRを読み取る</button>
     <div class="cam" id="camJoinWrap" hidden><video id="camJoin" playsinline muted></video></div>
     <p class="cam-msg" id="camJoinMsg"></p>
-    <button type="button" class="linkbtn" id="manualOpen">カメラが使えないとき</button>
-    <div id="manual" hidden>
-      <div class="row2">
-        <div><label class="field" for="mRoom">部屋番号</label><input type="number" id="mRoom" inputmode="numeric" placeholder="4けた"></div>
-        <div><label class="field" for="mCount">人数</label><input type="number" id="mCount" inputmode="numeric" min="2" max="10" placeholder="例 4"></div>
-      </div>
-      <div class="row2">
-        <div><label class="field" for="mMode">カード</label><select id="mMode"><option value="t">トランプ</option><option value="n">1〜100</option></select></div>
-        <div><label class="field" for="mSeat">自分の席番号</label><input type="number" id="mSeat" inputmode="numeric" min="1" max="10" placeholder="集める人の画面の番号"></div>
-      </div>
-      <button type="button" class="btn main" id="manualGo">この番号で参加</button>
-    </div>
     <button type="button" class="linkbtn" id="joinBack">最初に戻る</button>
   </section>
 
   <!-- 3. ゲーム -->
   <section id="sGame" hidden>
     <div class="round"><span>ラウンド <b id="roundNo">1</b></span><small class="note">全員のラウンドが<br>そろっているか確認</small></div>
+    <p class="peek" id="peek" hidden>このスマホの人は、このラウンドで自分のカードを見ました</p>
     <div class="cards" id="cards"></div>
     <p class="hint">あなたのカードはこの画面に出ません。ほかの人の画面を見ないでください。</p>
     <div class="row2">
@@ -261,9 +252,11 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
   <details><summary>通信やアカウント登録は要りますか</summary>
     <p>要りません。名前とカードはQRで直接やり取りし、どこにも送りません。最初にページを開いたあとは、電波が弱くても遊べます。</p></details>
   <details><summary>カメラが使えないときは</summary>
-    <p>集める人の画面に出る「部屋番号」と人数を入れ、自分の席番号を選ぶと参加できます。この場合、ほかの人の名前は「1番」「2番」のように表示されます。</p></details>
+    <p>QRの読み取りにはカメラが要ります。ブラウザの設定で、このページにカメラを許可してください。番号の手入力で入る方法は、別の席になりすませてしまうので用意していません。</p></details>
   <details><summary>何人まで遊べますか</summary>
     <p>2人から10人までです。</p></details>
+  <details><summary>ずるはできませんか</summary>
+    <p>名簿に入っていないスマホは参加できません。勝負の前に「自分のカードを見る」を押すと、そのラウンドの間ずっと「カードを見ました」と画面に出ます。</p></details>
   <details><summary>次のラウンドはどうやって配りますか</summary>
     <p>全員が「次のラウンド」を押すと、同じ組み合わせのカードが配られます。画面のラウンド番号が全員そろっているか確かめてください。</p></details>
 </div>
@@ -441,7 +434,6 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
     st.seat = 0; st.round = 1; save();
     var payload = 'IP1R|' + st.room + '|' + st.mode + '|' + st.members.map(function(m){ return m[0] + ':' + encodeURIComponent(m[1]); }).join(',');
     drawQr($('roomQr'), payload);
-    $('roomNo').textContent = st.room;
     $('roomCount').textContent = st.members.length;
     $('roomMode').textContent = st.mode === 't' ? 'トランプ' : '1〜100';
     $('roomMembers').innerHTML = st.members.map(function(m, i){ return '<li><span>' + (i + 1) + '番 ' + esc(m[1]) + '</span><small>' + (i === 0 ? '集める人' : '') + '</small></li>'; }).join('');
@@ -480,19 +472,6 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
       startGame();
     });
   });
-  $('manualOpen').addEventListener('click', function(){ $('manual').hidden = !$('manual').hidden; });
-  $('manualGo').addEventListener('click', function(){
-    var room = +$('mRoom').value, n = +$('mCount').value, seat = +$('mSeat').value;
-    if (!(room >= 1000 && room <= 9999)) return showErr('部屋番号は4けたです。');
-    if (!(n >= 2 && n <= MAX)) return showErr('人数は2〜' + MAX + 'です。');
-    if (!(seat >= 1 && seat <= n)) return showErr('席番号は1〜' + n + 'です。');
-    st.room = room; st.mode = $('mMode').value; st.seat = seat - 1; st.round = 1;
-    st.members = [];
-    for (var i = 0; i < n; i++) st.members.push(['', i === seat - 1 ? st.name : (i + 1) + '番']);
-    save();
-    startGame();
-  });
-
   // ===== 配る（部屋番号とラウンドから全員同じ並びを作る） =====
   function mulberry32(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
   function deal(room, round, mode, n){
@@ -524,10 +503,13 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
         (mine && !revealed ? '<div class="cd">？</div>' : cardHtml(cards[i])) + '</div>';
     }).join('');
     $('reveal').textContent = revealed ? '自分のカードを隠す' : '自分のカードを見る';
+    $('peek').hidden = st.peeked !== st.round;
   }
   $('reveal').addEventListener('click', function(){
-    if (!revealed && !confirm('自分のカードを表示します。勝負が終わってから押してください。')) return;
-    revealed = !revealed; renderGame();
+    if (!revealed && !confirm('自分のカードを表示します。このラウンドの間「カードを見ました」と出ます。勝負が終わってから押してください。')) return;
+    revealed = !revealed;
+    if (revealed) { st.peeked = st.round; save(); }
+    renderGame();
     if (revealed) track('ip_reveal', { round: st.round });
   });
   $('nextRound').addEventListener('click', function(){
