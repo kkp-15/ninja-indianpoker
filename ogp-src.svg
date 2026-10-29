@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0" stop-color="#1b3a8f"/><stop offset=".55" stop-color="#0d1f5c"/><stop offset="1" stop-color="#060d2b"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe9a0" stop-opacity="0"/><stop offset=".45" stop-color="#ffcf5a" stop-opacity=".85"/><stop offset="1" stop-color="#ffcf5a" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="felt" cx="50%" cy="20%" r="80%">
+      <stop offset="0" stop-color="#2f66d6"/><stop offset="1" stop-color="#16409e"/>
+    </radialGradient>
+    <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="12" fill="#d8323c"/><line x1="0" y1="0" x2="0" y2="12" stroke="#ff8f95" stroke-width="3"/>
+    </pattern>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+<rect width="1200" height="1200" fill="#060d2b"/>
+<g transform="translate(0,285)"><clipPath id="c"><rect width="1200" height="630"/></clipPath><g clip-path="url(#c)">
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- 金の光の柱 -->
+  <rect x="40" y="0" width="34" height="420" fill="url(#gold)"/><rect x="118" y="0" width="16" height="380" fill="url(#gold)" opacity=".6"/>
+  <rect x="1126" y="0" width="34" height="420" fill="url(#gold)"/><rect x="1066" y="0" width="16" height="380" fill="url(#gold)" opacity=".6"/>
+  <!-- 題字 -->
+  <g font-family="Hiragino Sans" font-weight="900" text-anchor="middle" paint-order="stroke" stroke-linejoin="round">
+    <text x="600" y="150" font-size="104" fill="#ffffff" stroke="#000" stroke-width="18" filter="url(#glow)">インディアン</text>
+    <text x="600" y="275" font-size="124" fill="#ffd21a" stroke="#000" stroke-width="20" filter="url(#glow)">ポーカー</text>
+  </g>
+  <!-- ネオンの名札 -->
+  <g font-family="Hiragino Sans" font-weight="800" font-size="34" text-anchor="middle" fill="#fff">
+    <g filter="url(#glow)"><rect x="95" y="320" width="220" height="70" rx="8" fill="#0a0f1e" stroke="#19e68c" stroke-width="5"/></g><text x="205" y="367">はなこ ♠J</text>
+    <g filter="url(#glow)"><rect x="365" y="320" width="220" height="70" rx="8" fill="#0a0f1e" stroke="#ff7a2e" stroke-width="5"/></g><text x="475" y="367">たろう ♥4</text>
+    <g filter="url(#glow)"><rect x="635" y="320" width="220" height="70" rx="8" fill="#0a0f1e" stroke="#2e7bff" stroke-width="5"/></g><text x="745" y="367">じろう ♣9</text>
+    <g filter="url(#glow)"><rect x="905" y="320" width="220" height="70" rx="8" fill="#0a0f1e" stroke="#ff2fb4" stroke-width="5"/></g><text x="1015" y="367">あなた ？</text>
+  </g>
+  <!-- 卓 -->
+  <ellipse cx="600" cy="760" rx="760" ry="330" fill="#111" stroke="#e6b34a" stroke-width="6"/>
+  <ellipse cx="600" cy="780" rx="720" ry="300" fill="url(#felt)"/>
+  <!-- 伏せたカード -->
+  <g transform="translate(470 470) rotate(-6)"><rect width="120" height="168" rx="10" fill="#fff"/><rect x="9" y="9" width="102" height="150" rx="6" fill="url(#hatch)"/></g>
+  <g transform="translate(610 466) rotate(5)"><rect width="120" height="168" rx="10" fill="#fff"/><rect x="9" y="9" width="102" height="150" rx="6" fill="url(#hatch)"/></g>
+  <!-- チップ -->
+  <g transform="translate(860 520)"><ellipse cx="0" cy="60" rx="58" ry="20" fill="#c99a00"/><rect x="-58" y="0" width="116" height="60" fill="#ffd21a"/><ellipse cx="0" cy="0" rx="58" ry="20" fill="#ffe46b" stroke="#222" stroke-width="3"/></g>
+  <!-- 下の帯 --><rect x="0" y="568" width="1200" height="62" fill="#000" opacity=".6"/>
+  <g font-family="Hiragino Sans" font-weight="800" text-anchor="middle">
+    <text x="600" y="612" font-size="34" fill="#fff" stroke="#000" stroke-width="7" paint-order="stroke">スマホで遊べる・無料・登録不要</text>
+  </g>
+
+</g></g>
+</svg>

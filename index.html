@@ -3,20 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>インディアンポーカーをスマホで｜QRで全員つながる・自分以外のカードが見える【無料・登録不要】</title>
-<meta name="description" content="インディアンポーカーをスマホで遊べる無料ツール。全員が同じページを開いて名前のQRを読み合うと、各スマホに自分以外の人のカードだけが出ます。おでこにカードを当てなくてよく、トランプがなくても遊べます。2人から10人まで。通信なし・登録なし。">
+<title>インディアンポーカーのアプリ｜スマホで遊べる無料Web版・ルールと強さ・2人の遊び方【登録不要】</title>
+<meta name="description" content="インディアンポーカーをスマホで遊べる無料のWebアプリ。名前のQRを読み合うだけで、各スマホに自分以外の人のカードが出ます。トランプもインストールも要らず、2〜10人で遊べます。ルール、カードの強さの決め方、2人での遊び方も。">
 <meta name="theme-color" content="#ff8a3d">
 <link rel="canonical" href="https://indianpoker.kkpwebninja.com/">
 <!-- WEBNINJA_UNIFIED_FAVICON -->
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta property="og:title" content="インディアンポーカーをスマホで｜QRで全員つながる">
+<meta property="og:title" content="インディアンポーカーをスマホで｜無料・登録不要のアプリ">
 <meta property="og:description" content="名前のQRを読み合うと、各スマホに自分以外の人のカードだけが出ます。トランプなし・おでこに当てなくてOK。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://indianpoker.kkpwebninja.com/">
 <meta property="og:site_name" content="インディアンポーカーをスマホで">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://indianpoker.kkpwebninja.com/ogp.jpg?d=20261030">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indianpoker.kkpwebninja.com/ogp.jpg?d=20261030">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -30,6 +34,7 @@
       "operatingSystem":"Web",
       "inLanguage":"ja",
       "datePublished":"2026-10-30",
+      "image":"https://indianpoker.kkpwebninja.com/ogp.jpg?d=20261030",
       "offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},
       "author":{"@type":"Organization","name":"web忍者の砦"}
     },
@@ -39,6 +44,8 @@
         {"@type":"Question","name":"通信やアカウント登録は要りますか","acceptedAnswer":{"@type":"Answer","text":"要りません。名前とカードはQRで直接やり取りし、どこにも送りません。最初にページを開いたあとは、電波が弱くても遊べます。"}},
         {"@type":"Question","name":"カメラが使えないときは","acceptedAnswer":{"@type":"Answer","text":"QRの読み取りにはカメラが要ります。ブラウザの設定で、このページにカメラを許可してください。番号の手入力で入る方法は、別の席になりすませてしまうので用意していません。"}},
         {"@type":"Question","name":"ずるはできませんか","acceptedAnswer":{"@type":"Answer","text":"名簿に入っていないスマホは参加できません。勝負の前に「自分のカードを見る」を押すと、そのラウンドの間ずっと「カードを見ました」と画面に出ます。"}},
+        {"@type":"Question","name":"カードの強さはどう決めますか","acceptedAnswer":{"@type":"Answer","text":"決まった正式ルールはありません。始める前に、Aを一番強くする（A＞K＞Q＞…＞2）か、数字どおりにする（K＞Q＞…＞2＞A）かを決めます。同じ数字のときは、マークで決めるか引き分けにします。"}},
+        {"@type":"Question","name":"2人でも遊べますか","acceptedAnswer":{"@type":"Answer","text":"遊べます。相手のカードだけが見えるので、勝負か降りるかの読み合いになります。何ラウンドかの合計点で勝ち負けを決めると続けやすくなります。"}},
         {"@type":"Question","name":"何人まで遊べますか","acceptedAnswer":{"@type":"Answer","text":"2人から10人までです。"}},
         {"@type":"Question","name":"次のラウンドはどうやって配りますか","acceptedAnswer":{"@type":"Answer","text":"全員が「次のラウンド」を押すと、同じ組み合わせのカードが配られます。画面のラウンド番号が全員そろっているか確かめてください。"}}
       ]
@@ -60,7 +67,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
 <!-- 筆と太字はこのページで使う字だけ（python3 ~/test/kkp-kit/fonttext.py index.html --extra "（JS 内の文字）"） -->
-<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=RocknRoll+One&display=swap&text=%21%22%23%24%26%27%28%29%2A%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3FABCDEFGHIJKLMNOPQRSTUVWXY%5B%5C%5D%5E_abcdefghijklmnopqrstuvwxyz%7B%7C%7D%C2%A9%C2%B7%C3%97%E2%80%94%E2%80%A6%E2%86%92%E2%91%A0%E2%91%A1%E2%99%A0%E2%99%A3%E2%99%A5%E2%99%A6%E3%80%81%E3%80%82%E3%80%8C%E3%80%8D%E3%80%90%E3%80%91%E3%80%9C%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8E%E3%81%8F%E3%81%90%E3%81%91%E3%81%92%E3%81%93%E3%81%95%E3%81%97%E3%81%98%E3%81%99%E3%81%9A%E3%81%9B%E3%81%9D%E3%81%9E%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%A3%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%B0%E3%81%B3%E3%81%B6%E3%81%B8%E3%81%B9%E3%81%BB%E3%81%BE%E3%81%BF%E3%82%80%E3%82%81%E3%82%82%E3%82%84%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%8D%E3%82%8F%E3%82%92%E3%82%93%E3%82%A2%E3%82%A3%E3%82%A4%E3%82%A6%E3%82%A9%E3%82%AA%E3%82%AB%E3%82%B2%E3%82%B3%E3%82%B6%E3%82%B7%E3%82%B8%E3%82%B9%E3%82%BA%E3%83%80%E3%83%83%E3%83%84%E3%83%86%E3%83%87%E3%83%88%E3%83%89%E3%83%8B%E3%83%90%E3%83%95%E3%83%96%E3%83%97%E3%83%9A%E3%83%9B%E3%83%9C%E3%83%9D%E3%83%9E%E3%83%A0%E3%83%A1%E3%83%A5%E3%83%A8%E3%83%A9%E3%83%AA%E3%83%AB%E3%83%AC%E3%83%AF%E3%83%B3%E3%83%BB%E3%83%BC%E4%B8%80%E4%B8%8A%E4%B8%8D%E4%B8%A6%E4%B8%AD%E4%B8%B8%E4%BA%8C%E4%BA%BA%E4%BB%98%E4%BB%A5%E4%BC%9A%E4%BD%95%E4%BD%9C%E4%BD%BF%E4%BE%A1%E4%BF%A1%E5%80%8B%E5%85%88%E5%85%A5%E5%85%A8%E5%85%AC%E5%86%86%E5%86%8D%E5%87%BA%E5%88%86%E5%88%87%E5%88%9D%E5%88%A5%E5%89%8D%E5%8A%9B%E5%8A%A0%E5%8B%95%E5%8B%9D%E5%8D%94%E5%8F%82%E5%8F%8D%E5%8F%96%E5%8F%AF%E5%8F%B0%E5%8F%B7%E5%90%84%E5%90%88%E5%90%8C%E5%90%8D%E5%91%8A%E5%93%81%E5%93%A1%E5%95%86%E5%95%8F%E5%96%B6%E5%A3%B0%E5%A4%89%E5%A4%96%E5%A7%8B%E5%AD%97%E5%AE%9A%E5%B1%8B%E5%B8%AD%E5%B9%B4%E5%BA%83%E5%BC%B1%E5%BC%B7%E5%BD%93%E5%BD%A2%E5%BE%8C%E5%BF%8D%E5%BF%9C%E6%80%9D%E6%83%85%E6%84%8F%E6%85%8B%E6%88%BB%E6%89%8B%E6%89%8D%E6%8A%BC%E6%8E%A5%E6%8E%A8%E6%8F%8F%E6%95%B0%E6%96%87%E6%96%99%E6%96%B9%E6%97%A5%E6%98%A0%E6%99%82%E6%9B%BF%E6%9C%80%E6%9C%88%E6%9C%AC%E6%9C%AD%E6%9E%9A%E6%9E%A0%E6%A0%BC%E6%A5%BD%E6%AC%A1%E6%B0%97%E6%B1%BA%E6%B3%95%E6%B3%A2%E6%B8%88%E7%82%B9%E7%84%A1%E7%89%88%E7%89%A9%E7%89%B9%E7%8A%B6%E7%90%86%E7%94%A8%E7%94%BB%E7%95%AA%E7%99%BA%E7%99%BB%E7%9B%9B%E7%9B%B4%E7%9F%A5%E7%A0%A6%E7%A2%BA%E7%A4%BA%E7%A4%BE%E7%A8%8E%E7%A8%AE%E7%B0%BF%E7%B5%82%E7%B5%84%E7%B5%B5%E7%B6%9A%E8%80%85%E8%87%AA%E8%8B%B1%E8%A1%A8%E8%A6%81%E8%A6%8B%E8%A8%80%E8%A8%88%E8%A8%98%E8%A8%AD%E8%A8%B1%E8%A9%B1%E8%AA%8D%E8%AA%9E%E8%AA%AD%E8%B2%A0%E8%B3%AA%E8%B5%B0%E8%B5%B7%E8%BC%89%E8%BE%BC%E8%BF%BD%E9%80%81%E9%80%9A%E9%81%8A%E9%81%8B%E9%83%A8%E9%85%8D%E9%87%8D%E9%8C%B2%E9%96%8B%E9%96%93%E9%99%8D%E9%9A%A0%E9%9B%86%E9%9B%BB%E9%9D%A2%E9%A0%86%E9%A1%8C%E9%A1%9E%EF%BC%81%EF%BC%88%EF%BC%89%EF%BC%8F%EF%BC%9A%EF%BC%9F%EF%BD%9C" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=RocknRoll+One&display=swap&text=%21%22%23%24%26%27%28%29%2A%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3FABCDEFGHIJKLMNOPQRSTUVWXY%5B%5C%5D%5E_abcdefghijklmnopqrstuvwxyz%7B%7C%7D%C2%A9%C2%B7%C3%97%E2%80%94%E2%80%A6%E2%86%92%E2%88%92%E2%91%A0%E2%91%A1%E2%99%A0%E2%99%A3%E2%99%A5%E2%99%A6%E3%80%81%E3%80%82%E3%80%8C%E3%80%8D%E3%80%90%E3%80%91%E3%80%9C%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8E%E3%81%8F%E3%81%90%E3%81%91%E3%81%92%E3%81%93%E3%81%95%E3%81%97%E3%81%98%E3%81%99%E3%81%9A%E3%81%9B%E3%81%9D%E3%81%9E%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%A3%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%B0%E3%81%B3%E3%81%B6%E3%81%B8%E3%81%B9%E3%81%BB%E3%81%BE%E3%81%BF%E3%82%80%E3%82%81%E3%82%82%E3%82%84%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%8D%E3%82%8F%E3%82%92%E3%82%93%E3%82%A2%E3%82%A3%E3%82%A4%E3%82%A6%E3%82%A9%E3%82%AA%E3%82%AB%E3%82%AF%E3%82%B2%E3%82%B3%E3%82%B6%E3%82%B7%E3%82%B8%E3%82%B9%E3%82%BA%E3%83%80%E3%83%83%E3%83%84%E3%83%86%E3%83%87%E3%83%88%E3%83%89%E3%83%8B%E3%83%90%E3%83%95%E3%83%96%E3%83%97%E3%83%9A%E3%83%9B%E3%83%9C%E3%83%9D%E3%83%9E%E3%83%A0%E3%83%A1%E3%83%A5%E3%83%A7%E3%83%A8%E3%83%A9%E3%83%AA%E3%83%AB%E3%83%AC%E3%83%AF%E3%83%B3%E3%83%BB%E3%83%BC%E4%B8%80%E4%B8%8A%E4%B8%8D%E4%B8%A6%E4%B8%AD%E4%B8%B8%E4%BA%8C%E4%BA%BA%E4%BB%98%E4%BB%A5%E4%BC%9A%E4%BD%95%E4%BD%9C%E4%BD%BF%E4%BE%8B%E4%BE%A1%E4%BF%A1%E5%80%8B%E5%85%88%E5%85%A5%E5%85%A8%E5%85%AC%E5%86%86%E5%86%8D%E5%87%BA%E5%88%86%E5%88%87%E5%88%9D%E5%88%A5%E5%89%8D%E5%8A%9B%E5%8A%A0%E5%8B%95%E5%8B%9D%E5%8D%94%E5%8F%82%E5%8F%8D%E5%8F%96%E5%8F%AF%E5%8F%B0%E5%8F%B7%E5%90%84%E5%90%88%E5%90%8C%E5%90%8D%E5%91%8A%E5%93%81%E5%93%A1%E5%95%86%E5%95%8F%E5%96%B6%E5%9B%9E%E5%A3%B0%E5%A4%89%E5%A4%96%E5%A7%8B%E5%AD%97%E5%AE%9A%E5%B1%8B%E5%B8%AD%E5%B9%B4%E5%BA%83%E5%BC%8F%E5%BC%95%E5%BC%B1%E5%BC%B7%E5%BD%93%E5%BD%A2%E5%BE%8C%E5%BF%8D%E5%BF%9C%E6%80%9D%E6%83%85%E6%84%8F%E6%85%8B%E6%88%BB%E6%89%8B%E6%89%8D%E6%8A%BC%E6%8E%A5%E6%8E%A8%E6%8F%8F%E6%95%B0%E6%96%87%E6%96%99%E6%96%B9%E6%97%A5%E6%98%A0%E6%99%82%E6%9B%BF%E6%9C%80%E6%9C%88%E6%9C%AC%E6%9C%AD%E6%9E%9A%E6%9E%A0%E6%A0%BC%E6%A5%BD%E6%AC%A1%E6%AD%A3%E6%B0%97%E6%B1%BA%E6%B3%95%E6%B3%A2%E6%B8%88%E7%82%B9%E7%84%A1%E7%89%88%E7%89%A9%E7%89%B9%E7%8A%B6%E7%90%86%E7%94%A8%E7%94%BB%E7%95%AA%E7%99%BA%E7%99%BB%E7%9B%9B%E7%9B%B4%E7%9B%B8%E7%9F%A5%E7%A0%A6%E7%A2%BA%E7%A4%BA%E7%A4%BE%E7%A8%8E%E7%A8%AE%E7%B0%BF%E7%B5%82%E7%B5%84%E7%B5%B5%E7%B6%9A%E8%80%85%E8%87%AA%E8%8B%B1%E8%A1%A8%E8%A6%81%E8%A6%8B%E8%A8%80%E8%A8%88%E8%A8%98%E8%A8%AD%E8%A8%B1%E8%A9%B1%E8%AA%8D%E8%AA%9E%E8%AA%AD%E8%B2%A0%E8%B3%AA%E8%B5%B0%E8%B5%B7%E8%BC%89%E8%BE%BC%E8%BF%B7%E8%BF%BD%E9%80%81%E9%80%9A%E9%81%8A%E9%81%8B%E9%83%A8%E9%85%8D%E9%87%8D%E9%8C%B2%E9%96%8B%E9%96%93%E9%99%8D%E9%9A%A0%E9%9B%86%E9%9B%BB%E9%9D%A2%E9%A0%86%E9%A1%8C%E9%A1%9E%EF%BC%81%EF%BC%88%EF%BC%89%EF%BC%8F%EF%BC%9A%EF%BC%9E%EF%BC%9F%EF%BD%9C" rel="stylesheet">
 <!-- 共通部品 D4（kkp-kit を kit/ にコピーしたもの。中は手で直さず kkp-kit 側で直して sync.sh） -->
 <link rel="stylesheet" href="/kit/kit.css?v=534b0b9">
 <script src="/kit/kit.js?v=534b0b9" defer></script>
@@ -145,6 +152,35 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
 .kkp-rel{box-sizing:border-box;margin:2rem 0 0;background:var(--k-kinari,#fffcf7);border:var(--k-bw-s,1px) solid var(--k-sumi,#f0e6d2);border-radius:var(--k-r,12px);padding:12px 16px 6px;color:var(--k-sumi,#333)}
 .kkp-rel>div:first-child{font-weight:800;margin:0 0 4px}
 .kkp-rel>a{display:block;min-height:44px;padding:10px 0;border-top:1px dashed var(--line);color:var(--k-sumi,#333);text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:4px}
+
+/* ===== 2026-10-30 配色：ポーカー卓（ユーザーが好きなサムネの色使い＝紺・金・黄・青い卓・ネオンの名札・赤い札の裏）。ツールの枠だけに使い、読み物は明るい地のまま ===== */
+.app{background:radial-gradient(ellipse at 50% 0%,#1b3a8f 0%,#0d1f5c 60%,#070f30 100%);border:3px solid #e6b34a;border-top:6px solid #e6b34a;color:#fff;box-shadow:0 0 18px rgba(230,179,74,.25)}
+.app .step-h,.app label.field,.app .hint,.app .cam-msg,.app .roomno,.app .note,.app .opt summary{color:#eef2ff}
+.app .linkbtn,.app .hint a{color:#ffd21a}
+.app .members{border-top-color:rgba(255,255,255,.25)}
+.app .members li{border-bottom-color:rgba(255,255,255,.18)}
+.app .members small{color:#c9d3ff}
+.app .btn{background:#fff;color:#111;border-color:#000}
+.app .btn.main{background:#ffd21a;border-color:#000;color:#111;box-shadow:0 0 14px rgba(255,210,26,.45)}
+.app .btn.main:disabled{box-shadow:none}
+.app .round{background:rgba(0,0,0,.35)}
+.app .round b{color:#ffd21a;text-shadow:0 0 10px rgba(255,210,26,.6)}
+.app .round small{color:#dfe6ff}
+.app .cards{background:radial-gradient(ellipse at 50% 15%,#2f66d6,#16409e);border:4px solid #111;outline:3px solid #e6b34a;outline-offset:0;border-radius:18px;padding:12px}
+.app .pc{--neon:#19e68c;background:#0a0f1e;color:#fff;border:3px solid var(--neon);box-shadow:0 0 12px var(--neon)}
+.app .pc:nth-child(5n+2){--neon:#ff7a2e}
+.app .pc:nth-child(5n+3){--neon:#2e7bff}
+.app .pc:nth-child(5n+4){--neon:#ffffff}
+.app .pc:nth-child(5n+5){--neon:#ff2fb4}
+.app .pc .cd{color:#fff}
+.app .pc .cd.red{color:#ff5a64}
+.app .pc.me{background:repeating-linear-gradient(45deg,#d8323c 0 7px,#ff8f95 7px 10px);border:3px solid #fff;box-shadow:none}
+.app .pc.me .nm{display:inline-block;background:#fff;color:#111;border-radius:6px;padding:0 6px}
+.app .pc.me .cd{color:#fff;text-shadow:0 0 8px #000,0 0 2px #000}
+.app .rule1{background:rgba(255,255,255,.1);color:#fff}
+.app .peek{background:#ff5a64;color:#fff}
+.app .qrname{color:#fff}
+.prod{border-color:#e6b34a;box-shadow:0 0 0 3px #0d1f5c inset}
 [hidden]{display:none!important}
 </style>
 </head>
@@ -250,7 +286,22 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
     <li>順番に「勝負」か「降りる」を言う。</li>
     <li>勝負した人のうち、一番強いカードの人が勝ち。</li>
   </ol>
-  <p class="note">始める前に、Aを一番強くするか弱くするか、点数の数え方を決めておきます。2人でも遊べます。</p>
+  <p class="note">点数の例：降りた人 −1点・勝負して勝った人 +3点・負けた人 −3点。始める前にみんなで決めます。</p>
+</div>
+
+<h2>カードの強さの順番</h2>
+<div class="box">
+  <p>決まった正式ルールはないので、<b>始める前にどちらかに決めます</b>。</p>
+  <ul>
+    <li><b>Aが一番強い</b>：A ＞ K ＞ Q ＞ J ＞ 10 ＞ … ＞ 2</li>
+    <li><b>数字どおり</b>：K ＞ Q ＞ J ＞ 10 ＞ … ＞ 2 ＞ A</li>
+  </ul>
+  <p class="note">同じ数字のときは、マークで決める（例：♠ ＞ ♥ ＞ ♦ ＞ ♣）か引き分けにします。このツールはジョーカーを入れない52枚から配ります。強さで迷いたくないときは、カードを「1〜100の数字」にすると同じ数字が出ません。</p>
+</div>
+
+<h2>2人で遊ぶとき</h2>
+<div class="box">
+  <p>2人でも遊べます。相手のカードだけが見えるので、「勝負」か「降りる」かの読み合いになります。5ラウンドなど回数を決めて、合計点で勝ち負けを決めると続けやすくなります。</p>
 </div>
 
 <h2 id="coyote">もっと盛り上がるのは、本物の「コヨーテ」</h2>
