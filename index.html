@@ -43,7 +43,7 @@
       "@type":"FAQPage",
       "mainEntity":[
         {"@type":"Question","name":"通信やアカウント登録は要りますか","acceptedAnswer":{"@type":"Answer","text":"要りません。名前とカードはQRで直接やり取りし、どこにも送りません。最初にページを開いたあとは、電波が弱くても遊べます。"}},
-        {"@type":"Question","name":"カメラが使えないときは","acceptedAnswer":{"@type":"Answer","text":"QRの読み取りにはカメラが要ります。ブラウザの設定で、このページにカメラを許可してください。番号の手入力で入る方法は、別の席になりすませてしまうので用意していません。"}},
+        {"@type":"Question","name":"カメラが使えないときは","acceptedAnswer":{"@type":"Answer","text":"ブラウザの設定でカメラを許可するのがいちばん確実です。許可できないときは「集めてもらう」の画面の「カメラが使えないとき」から、集める人の画面に出る6けたの合言葉と、名簿のあなたの番号を入れて入れます（ほかの人の名前は「○番の人」と出ます）。"}},
         {"@type":"Question","name":"ずるはできませんか","acceptedAnswer":{"@type":"Answer","text":"名簿に入っていないスマホは参加できません。勝負の前に「自分のカードを見る」を押すと、そのラウンドの間ずっと「カードを見ました」と画面に出ます。"}},
         {"@type":"Question","name":"カードの強さはどう決めますか","acceptedAnswer":{"@type":"Answer","text":"決まった正式ルールはありません。始める前に、Aを一番強くする（A＞K＞Q＞…＞2）か、数字どおりにする（K＞Q＞…＞2＞A）かを決めます。同じ数字のときは、マークで決めるか引き分けにします。"}},
         {"@type":"Question","name":"2人でも遊べますか","acceptedAnswer":{"@type":"Answer","text":"遊べます。相手のカードだけが見えるので、勝負か降りるかの読み合いになります。何ラウンドかの合計点で勝ち負けを決めると続けやすくなります。"}},
@@ -227,6 +227,7 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
     <div class="qrbox" id="roomQr"></div>
     <ul class="members" id="roomMembers"></ul>
     <p class="roomno"><span id="roomCount"></span>人・<span id="roomMode"></span></p>
+    <p class="roomno">カメラが使えない人へ：合言葉 <b id="roomCode"></b>（番号は上の名簿の「○番」）</p>
     <button type="button" class="btn main" id="hostStart">全員読み取れたら、はじめる</button>
   </section>
 
@@ -238,6 +239,15 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
     <button type="button" class="btn main" id="joinScan">集める人のQRを読み取る</button>
     <div class="cam" id="camJoinWrap" hidden><video id="camJoin" playsinline muted></video></div>
     <p class="cam-msg" id="camJoinMsg"></p>
+    <button type="button" class="linkbtn" id="joinManualOpen">カメラが使えないとき（合言葉で入る）</button>
+    <div id="joinManual" hidden>
+      <label class="field" for="joinCode">集める人の画面の合言葉（6けた）</label>
+      <input type="text" id="joinCode" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="例 482751">
+      <label class="field" for="joinSeat">名簿のあなたの番号</label>
+      <input type="number" id="joinSeat" inputmode="numeric" min="2" max="10" placeholder="例 3">
+      <button type="button" class="btn main" id="joinManualGo">合言葉で入る</button>
+      <p class="hint">ほかの人の名前は「○番の人」と出ます。</p>
+    </div>
     <button type="button" class="linkbtn" id="joinBack">最初に戻る</button>
   </section>
 
@@ -328,7 +338,7 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
   <details><summary>通信やアカウント登録は要りますか</summary>
     <p>要りません。名前とカードはQRで直接やり取りし、どこにも送りません。最初にページを開いたあとは、電波が弱くても遊べます。</p></details>
   <details><summary>カメラが使えないときは</summary>
-    <p>QRの読み取りにはカメラが要ります。ブラウザの設定で、このページにカメラを許可してください。番号の手入力で入る方法は、別の席になりすませてしまうので用意していません。</p></details>
+    <p>ブラウザの設定でカメラを許可するのがいちばん確実です。許可できないときは「集めてもらう」の画面の「カメラが使えないとき」から、集める人の画面に出る6けたの合言葉と、名簿のあなたの番号を入れて入れます（ほかの人の名前は「○番の人」と出ます）。</p></details>
   <details><summary>何人まで遊べますか</summary>
     <p>2人から10人までです。</p></details>
   <details><summary>ずるはできませんか</summary>
@@ -502,6 +512,7 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
     st.seat = 0; st.round = 1; save();
     var payload = 'IP1R|' + st.room + '|' + st.mode + '|' + st.members.map(function(m){ return m[0] + ':' + encodeURIComponent(m[1]); }).join(',');
     drawQr($('roomQr'), payload);
+    $('roomCode').textContent = String(st.room) + (st.members.length % 10) + (st.mode === 't' ? '1' : '2');
     $('roomCount').textContent = st.members.length;
     $('roomMode').textContent = st.mode === 't' ? 'トランプ' : '1〜100';
     $('roomMembers').innerHTML = st.members.map(function(m, i){ return '<li><span>' + (i + 1) + '番 ' + esc(m[1]) + '</span><small>' + (i === 0 ? '集める人' : '') + '</small></li>'; }).join('');
@@ -539,6 +550,26 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
       st.room = +m[1]; st.mode = m[2]; st.members = members; st.seat = seat; st.round = 1; save();
       startGame();
     });
+  });
+  // ===== カメラが使えない人：合言葉（部屋番号4けた＋人数＋1=トランプ/2=1〜100）と名簿の番号で入る =====
+  $('joinManualOpen').addEventListener('click', function(){
+    stopCam(); $('camJoinWrap').hidden = true;
+    $('joinManual').hidden = false; $('joinCode').focus();
+  });
+  $('joinManualGo').addEventListener('click', function(){
+    var msg = $('camJoinMsg');
+    var c = $('joinCode').value.replace(/[^0-9０-９]/g, '').replace(/[０-９]/g, function(d){ return String.fromCharCode(d.charCodeAt(0) - 0xFEE0); });
+    var m = /^([1-9]\d{3})(\d)([12])$/.exec(c);
+    if (!m) { msg.textContent = '合言葉は6けたの数字です。集める人の画面で確かめてください'; return; }
+    var n = +m[2] || 10;
+    if (n < 2) { msg.textContent = '合言葉が違うようです。集める人の画面で確かめてください'; return; }
+    var seatNo = Math.floor(+$('joinSeat').value);
+    if (!(seatNo >= 2 && seatNo <= n)) { msg.textContent = '番号は2〜' + n + 'で入れてください（1番は集める人）'; return; }
+    var members = [];
+    for (var i = 0; i < n; i++) members.push([i === seatNo - 1 ? st.id : 'x' + i, i === seatNo - 1 ? st.name : (i + 1) + '番の人']);
+    st.room = +m[1]; st.mode = m[3] === '1' ? 't' : 'n'; st.members = members; st.seat = seatNo - 1; st.round = 1; save();
+    track('ip_join_code', { n: n });
+    startGame();
   });
   // ===== 配る（部屋番号とラウンドから全員同じ並びを作る） =====
   function mulberry32(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
