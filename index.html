@@ -154,34 +154,24 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
 .kkp-rel>div:first-child{font-weight:800;margin:0 0 4px}
 .kkp-rel>a{display:block;min-height:44px;padding:10px 0;border-top:1px dashed var(--line);color:var(--k-sumi,#333);text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:4px}
 
-/* ===== 2026-10-30 配色：ポーカー卓（ユーザーが好きなサムネの色使い＝紺・金・黄・青い卓・ネオンの名札・赤い札の裏）。ツールの枠だけに使い、読み物は明るい地のまま ===== */
-.app{background:radial-gradient(ellipse at 50% 0%,#1b3a8f 0%,#0d1f5c 60%,#070f30 100%);border:3px solid #e6b34a;border-top:6px solid #e6b34a;color:#fff;box-shadow:0 0 18px rgba(230,179,74,.25)}
-.app .step-h,.app label.field,.app .hint,.app .cam-msg,.app .roomno,.app .note,.app .opt summary{color:#eef2ff}
-.app .linkbtn,.app .hint a{color:#ffd21a}
-.app .members{border-top-color:rgba(255,255,255,.25)}
-.app .members li{border-bottom-color:rgba(255,255,255,.18)}
-.app .members small{color:#c9d3ff}
-.app .btn{background:#fff;color:#111;border-color:#000}
-.app .btn.main{background:#ffd21a;border-color:#000;color:#111;box-shadow:0 0 14px rgba(255,210,26,.45)}
-.app .btn.main:disabled{box-shadow:none}
-.app .round{background:rgba(0,0,0,.35)}
-.app .round b{color:#ffd21a;text-shadow:0 0 10px rgba(255,210,26,.6)}
-.app .round small{color:#dfe6ff}
-.app .cards{background:radial-gradient(ellipse at 50% 15%,#2f66d6,#16409e);border:4px solid #111;outline:3px solid #e6b34a;outline-offset:0;border-radius:18px;padding:12px}
-.app .pc{--neon:#19e68c;background:#0a0f1e;color:#fff;border:3px solid var(--neon);box-shadow:0 0 12px var(--neon)}
-.app .pc:nth-child(5n+2){--neon:#ff7a2e}
-.app .pc:nth-child(5n+3){--neon:#2e7bff}
-.app .pc:nth-child(5n+4){--neon:#ffffff}
-.app .pc:nth-child(5n+5){--neon:#ff2fb4}
-.app .pc .cd{color:#fff}
-.app .pc .cd.red{color:#ff5a64}
-.app .pc.me{background:repeating-linear-gradient(45deg,#d8323c 0 7px,#ff8f95 7px 10px);border:3px solid #fff;box-shadow:none}
-.app .pc.me .nm{display:inline-block;background:#fff;color:#111;border-radius:6px;padding:0 6px}
-.app .pc.me .cd{color:#fff;text-shadow:0 0 8px #000,0 0 2px #000}
-.app .rule1{background:rgba(255,255,255,.1);color:#fff}
-.app .peek{background:#ff5a64;color:#fff}
-.app .qrname{color:#fff}
-.prod{border-color:#e6b34a;box-shadow:0 0 0 3px #0d1f5c inset}
+/* 2026-11-11 ツールの枠も砦の色（墨・生成り・オレンジ）に（整える案 C2。10/30 のポーカー卓の配色はやめた） */
+.app .cards{background:var(--k-kinari,#fbf3e4);border:1px solid var(--k-line-soft,#ddd);border-radius:10px;padding:10px}
+/* 82-1 本文は15px以上 */
+.hint,.note,label.field,.linkbtn,.cam-msg,.opt{font-size:15px}
+.btn small{font-size:14px}
+/* 点数（確認待ち91） */
+.score{margin:1rem 0 0;padding-top:.6rem;border-top:1px solid var(--line)}
+.score-h{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 .3rem;font-weight:800}
+.score-h .linkbtn{margin:0;font-weight:400}
+.score ul{list-style:none;margin:0;padding:0}
+.score li{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:6px;padding:.3rem 0;border-bottom:1px solid var(--line-soft)}
+.score .sn{font-size:1rem;line-height:1.4;word-break:break-all}
+.score .sp{min-width:3.2em;text-align:right;font-family:var(--k-bold,inherit);font-size:1.4rem;font-variant-numeric:tabular-nums}
+.score .sp.minus{color:var(--red)}
+.score .sb{display:flex;gap:4px}
+.score .sb button{min-width:44px;min-height:44px;padding:0 4px;font:inherit;font-size:.95rem;font-weight:800;border:var(--k-bw-s,2px) solid var(--k-sumi,#333);border-radius:var(--k-r,6px);background:#fff;color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums}
+.score .sb button.p{background:var(--k-kinari,#fbf3e4)}
+@media(max-width:380px){.score li{grid-template-columns:1fr auto}.score .sb{grid-column:1/-1;justify-content:flex-end}}
 [hidden]{display:none!important}
 </style>
 </head>
@@ -261,6 +251,11 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
       <button type="button" class="btn" id="reveal">自分のカードを見る</button>
       <button type="button" class="btn main" id="nextRound">次のラウンド</button>
     </div>
+    <div class="score" id="score">
+      <p class="score-h"><span>点数</span><button type="button" class="linkbtn" id="scoreClear">点数を消す</button></p>
+      <ul id="scoreList"></ul>
+      <p class="hint">点数はこのスマホだけに残ります（1人がつければ十分です）。例：降りた人 −1・勝負して勝った人 +3・負けた人 −3。</p>
+    </div>
     <button type="button" class="linkbtn" id="quit">メンバーを決め直す</button>
     <p class="hint"><a href="#coyote" id="toCoyote">もっと盛り上げたいなら、本物のボードゲーム「コヨーテ」</a></p>
   </section>
@@ -270,14 +265,6 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
 <p class="updated">2〜10人｜通信なし・登録なし｜公開 2026年10月30日</p>
 
 
-<div class="kkp-ad">
-  <div class="kkp-ad-label">広告</div>
-  <ins class="adsbygoogle" style="display:block"
-       data-ad-client="ca-pub-1298304917726270"
-       data-ad-slot="2937937957"
-       data-ad-format="rectangle"
-       data-full-width-responsive="false"></ins>
-</div>
 
 <h2>遊び方：つなぐまで1分</h2>
 <div class="box">
@@ -289,6 +276,7 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
   <p class="note">次からは「次のラウンド」を押すだけ。読み取り直しは要りません。</p>
 </div>
 
+
 <h2>インディアンポーカーのルール</h2>
 <div class="box">
   <p>自分のカードだけが見えない状態で、勝負するか降りるかを決める遊びです。</p>
@@ -298,6 +286,15 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
     <li>勝負した人のうち、一番強いカードの人が勝ち。</li>
   </ol>
   <p class="note">点数の例：降りた人 −1点・勝負して勝った人 +3点・負けた人 −3点。始める前にみんなで決めます。</p>
+</div>
+
+<div class="kkp-ad">
+  <div class="kkp-ad-label">広告</div>
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-1298304917726270"
+       data-ad-slot="2937937957"
+       data-ad-format="rectangle"
+       data-full-width-responsive="false"></ins>
 </div>
 
 <h2>カードの強さの順番</h2>
@@ -602,7 +599,33 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
     }).join('');
     $('reveal').textContent = revealed ? '自分のカードを隠す' : '自分のカードを見る';
     $('peek').hidden = st.peeked !== st.round;
+    renderScore();
   }
+  // ===== 点数（この端末だけ。メンバーが変わったら0から） =====
+  function scoreArr(){
+    var n = st.members ? st.members.length : 0;
+    if (!st.scores || st.scores.room !== st.room || !Array.isArray(st.scores.p) || st.scores.p.length !== n) st.scores = { room: st.room, p: new Array(n).fill(0) };
+    return st.scores.p;
+  }
+  function renderScore(){
+    var p = scoreArr();
+    $('scoreList').innerHTML = st.members.map(function(m, i){
+      var v = p[i] | 0;
+      return '<li><span class="sn">' + esc(m[1]) + (i === st.seat ? '（あなた）' : '') + '</span><span class="sp' + (v < 0 ? ' minus' : '') + '">' + (v > 0 ? '+' : '') + v + '</span>' +
+        '<span class="sb">' + [-3, -1, 1, 3].map(function(d){ return '<button type="button" class="' + (d > 0 ? 'p' : 'm') + '" data-i="' + i + '" data-d="' + d + '" aria-label="' + esc(m[1]) + ' ' + (d > 0 ? '+' : '−') + Math.abs(d) + '点">' + (d > 0 ? '+' : '−') + Math.abs(d) + '</button>'; }).join('') + '</span></li>';
+    }).join('');
+  }
+  var scoreUsed = false;
+  $('scoreList').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-d]'); if (!b) return;
+    var p = scoreArr(); p[+b.dataset.i] = (p[+b.dataset.i] | 0) + (+b.dataset.d); save(); renderScore();
+    if (!scoreUsed) { scoreUsed = true; track('ip_score', { round: st.round }); }
+  });
+  $('scoreClear').addEventListener('click', function(){
+    if (!confirm('全員の点数を0にします。')) return;
+    st.scores = null; scoreArr(); save(); renderScore();
+  });
+
   $('reveal').addEventListener('click', function(){
     if (!revealed && !confirm('自分のカードを表示します。このラウンドの間「カードを見ました」と出ます。勝負が終わってから押してください。')) return;
     revealed = !revealed;
