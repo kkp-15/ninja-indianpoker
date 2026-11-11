@@ -163,6 +163,8 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
 .score{margin:1rem 0 0;padding-top:.6rem;border-top:1px solid var(--line)}
 .score-h{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 .3rem;font-weight:800}
 .score-h .linkbtn{margin:0;font-weight:400}
+/* 待ちの画面の挿し絵（柴犬の忍者・確認待ち124）。操作の下に小さく */
+.wait-pic{display:block;width:110px;height:auto;margin:.8rem auto 0}
 .score ul{list-style:none;margin:0;padding:0}
 .score li{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:6px;padding:.3rem 0;border-bottom:1px solid var(--line-soft)}
 .score .sn{font-size:1rem;line-height:1.4;word-break:break-all}
@@ -218,6 +220,7 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
     <p class="roomno"><span id="roomCount"></span>人・<span id="roomMode"></span></p>
     <p class="roomno">カメラが使えない人へ：合言葉 <b id="roomCode"></b>（番号は上の名簿の「○番」）</p>
     <button type="button" class="btn main" id="hostStart">全員読み取れたら、はじめる</button>
+    <img class="wait-pic" src="/img/shiba-card.webp" width="220" height="206" alt="柴犬の忍者" loading="lazy" decoding="async">
   </section>
 
   <!-- 2c. 参加：自分のQRを見せて、集める人のQRを読む -->
@@ -238,6 +241,7 @@ input:focus,select:focus{outline:none;border-color:var(--k-shu,var(--orange))}
       <p class="hint">ほかの人の名前は「○番の人」と出ます。</p>
     </div>
     <button type="button" class="linkbtn" id="joinBack">最初に戻る</button>
+    <img class="wait-pic" src="/img/shiba-card.webp" width="220" height="206" alt="柴犬の忍者" loading="lazy" decoding="async">
   </section>
 
   <!-- 3. ゲーム -->
